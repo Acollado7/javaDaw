@@ -24,7 +24,7 @@ public class Ej01 {
         entero = 10;
         corto = 20;
         byte1 = 30;
-        largo = 40;
+        largo = 40L;
         flotante = 50.5373827f;
         doble = 60.73643534;
         caracter = 'b';

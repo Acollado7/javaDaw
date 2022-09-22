@@ -18,12 +18,14 @@ public class Ej02 {
 
         //Realizaremos los siguiente intercambios de valores:
         // en b guarda c, en c guarda a, en a guarda b. Muestra por pantalla el resultado.
+        // (a=2, b=3, c=1)
 
         int aux = b;
         b = c;
         c = a;
         a = aux;
         System.out.printf("Intercambio de valores: a = %d, b = %d, c = %d %n", a, b, c);
+
 
     }
 }
