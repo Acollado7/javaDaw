@@ -33,14 +33,14 @@ public class Ej03 {
         //Muestra el resultado de cada operación usando text blocks, usando las variables que acabamos de crear
 
         System.out.println("""
-                El resultado de la suma es: """ + suma + """ 
-                El resultado de la resta es: """ + resta + """
-                El resultado de la multiplicación es: """ + multiplicacion + """
-                El resultado de la división es: """ + division + """
-                El resultado de la suma double es: """ + sumaDouble + """
-                El resultado de la resta double es: """ + restaDouble + """
-                El resultado de la multiplicación double es: """ + multiplicacionDouble + """
-                El resultado de la división double es: """ + divisionDouble + """
+                El resultado de la suma es: """ + suma + "\n"+ """ 
+                El resultado de la resta es: """ + resta + "\n"+ """
+                El resultado de la multiplicación es: """ + multiplicacion + "\n"+ """
+                El resultado de la división es: """ + division + "\n"+ """
+                El resultado de la suma double es: """ + sumaDouble + "\n"+ """
+                El resultado de la resta double es: """ + restaDouble + "\n"+ """
+                El resultado de la multiplicación double es: """ + multiplicacionDouble + "\n"+ """
+                El resultado de la división double es: """ + divisionDouble + "\n"+ """
                
                 """.formatted(suma , resta, multiplicacion, division, sumaDouble,
                 restaDouble, multiplicacionDouble, divisionDouble));
