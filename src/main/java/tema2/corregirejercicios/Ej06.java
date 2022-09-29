@@ -1,4 +1,4 @@
-package corregirejercicios;
+package tema2.corregirejercicios;
 
 public class Ej06 {
     public static void main(String[] args) {

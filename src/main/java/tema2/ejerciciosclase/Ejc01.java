@@ -1,4 +1,4 @@
-package ejerciciosclase;
+package tema2.ejerciciosclase;
 
 import javax.swing.*;
 // import java.util.Scanner;

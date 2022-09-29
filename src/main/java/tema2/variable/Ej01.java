@@ -1,8 +1,8 @@
-package variable;
+package tema2.variable;
 
 public class Ej01 {
     public static void main( String[] args ) {
-        // Incializamos una variable primitiva de cada tipo
+        // Incializamos una tema2.variable primitiva de cada tipo
         int entero ;
         short corto ;
         byte byte1 ;

@@ -1,4 +1,4 @@
-package operadoresbooleanos;
+package tema2.operadoresbooleanos;
 
 public class Ej05 {
     public static void main(String[] args) {

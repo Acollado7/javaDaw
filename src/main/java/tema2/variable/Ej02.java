@@ -1,4 +1,4 @@
-package variable;
+package tema2.variable;
 
 public class Ej02 {
     public static void main(String[] args) {

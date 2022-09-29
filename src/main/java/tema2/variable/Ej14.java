@@ -1,8 +1,8 @@
-package variable;
+package tema2.variable;
 
 public class Ej14 {
     public static void main(String[] args) {
-        // El programa tendrá una variable entera tiempo inicializada con un valor leído por teclado,
+        // El programa tendrá una tema2.variable entera tiempo inicializada con un valor leído por teclado,
         // en segundos, y queremos conocer este tiempo pero expresado en horas, minutos y segundos, mostrando los resultados por pantalla.
 
         // Variables y conversor a segundos

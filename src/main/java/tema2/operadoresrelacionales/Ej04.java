@@ -1,4 +1,4 @@
-package operadoresrelacionales;
+package tema2.operadoresrelacionales;
 
 public class Ej04 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package operadoresaritmeticos;
+package tema2.operadoresaritmeticos;
 
 public class Ej03 {
     public static void main(String[] args) {
