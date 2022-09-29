@@ -1,7 +1,7 @@
 package ejerciciosclase;
 
 import javax.swing.*;
-import java.util.Scanner;
+// import java.util.Scanner;
 
 public class Ejc01 {
     public static void main(String[] args) {
