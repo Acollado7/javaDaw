@@ -1,4 +1,4 @@
 # Tema2
-Ejercicios Tema 2 Java
+Ejercicios JAVA
 
-En este repositorio se encontrara todo sobre el tema 2 de JAVA
+En este repositorio se encontrara todo lo que hagamos con JAVA en este curso
