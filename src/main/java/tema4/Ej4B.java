@@ -21,6 +21,8 @@ public class Ej4B {
         System.out.println("4. Salir");
 
         int opcion = utilities.utilidades.leerEntero(1, 3);
+    do {
+
 
         switch (opcion) {
             case 1:
@@ -47,11 +49,8 @@ public class Ej4B {
                 System.out.println("-------------------------------------------------");
 
                 break;
-            case 4:
-                System.out.println("Salir");
-                System.out.println("-------------------------------------------------");
-                break;
         }
+        }while (opcion != 4);
 
     }
 }
