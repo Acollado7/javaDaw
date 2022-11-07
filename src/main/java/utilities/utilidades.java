@@ -17,7 +17,7 @@ public class utilidades {
             try {
                 numero = Integer.parseInt(leerCadena());
                 error = false;
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException nfe) {
                 System.out.println("Error, no es un numero entero");
             }
         } while (error);
@@ -37,7 +37,7 @@ public class utilidades {
                 } else {
                     error = false;
                 }
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException nfe) {
                 System.out.println("Error, no es un numero entero");
             }
         } while (error);
