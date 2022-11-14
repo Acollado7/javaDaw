@@ -2,9 +2,10 @@ package tema4;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
-import javax.swing.*;
 
 public class Ej4B {
+
+
     //Vamos a realizar una aplicación para generar contraseñas y números pin.
     // La aplicación tendrá tres opciones: la primera, genera números pin aleatorios
     // para tarjetas SIM de teléfonos móviles; la segunda opción genera contraseñas para
@@ -20,37 +21,69 @@ public class Ej4B {
         System.out.println("3. Generar una secuencia de caracteres aleatorios");
         System.out.println("4. Salir");
 
-        int opcion = utilities.utilidades.leerEntero(1, 3);
-    do {
+        int opcion = utilities.utilidades.leerEntero(1, 4);
 
 
-        switch (opcion) {
-            case 1:
-                System.out.println("Generar números pin aleatorios");
-                System.out.println("-------------------------------------------------");
-                // Creamos el pin con 4 numeros
 
-                String pin = RandomStringUtils.randomNumeric(4);
-                System.out.println(pin);
+            switch (opcion) {
+                case 1:
+                    System.out.println("Generar números pin aleatorios");
+                    System.out.println("-------------------------------------------------");
+                    // Creamos el pin con 4 numeros
 
-                break;
-            case 2:
-                System.out.println("Generar contraseñas para usuarios");
-                System.out.println("-------------------------------------------------");
-                // Creamos una contraseña con numeros y letras
+                    pin();
 
-                String password = RandomStringUtils.randomAlphanumeric(8);
-                System.out.println(password);
-                break;
+                    break;
+                case 2:
+                    System.out.println("Generar contraseñas para usuarios");
+                    System.out.println("-------------------------------------------------");
+                    // Creamos una contraseña con numeros y letras
+
+                   password();
+
+                    break;
+
+                case 3:
+                    System.out.println("Generar una secuencia de caracteres predefinidos");
+                    System.out.println("-------------------------------------------------");
+
+                    char[] conjuntoCaracteres = {'a', 'z', 'f', '@', '&', '*', '1', '2', '3', '4', '5'};
+
+                    //pedimos el numero de caracteres que queremos que tenga la contraseña
+
+                   password2();
+
+                    break;
+                case 4:
+                    System.out.println("Saliendo del programa");
+                    System.exit(0);
+                    break;
+            }
 
 
-            case 3:
-                System.out.println("Generar una secuencia de caracteres aleatorios");
-                System.out.println("-------------------------------------------------");
 
-                break;
-        }
-        }while (opcion != 4);
+    }
+    public static void pin(){
+        // Creamos el pin con 4 numeros
 
+        String pin = RandomStringUtils.randomNumeric(4);
+        System.out.println(pin);
+    }
+
+    public static void password(){
+        // Creamos una contraseña con numeros y letras
+
+        String password = RandomStringUtils.randomAlphanumeric(8);
+        System.out.println(password);
+    }
+
+    public static void password2(){
+        char[] conjuntoCaracteres = {'a', 'z', 'f', '@', '&', '*', '1', '2', '3', '4', '5'};
+
+        //pedimos el numero de caracteres que queremos que tenga la contraseña
+
+        int numero = utilities.utilidades.leerEntero(1, 10);
+        String password2 = RandomStringUtils.random(numero, conjuntoCaracteres);
+        System.out.println(password2);
     }
 }
