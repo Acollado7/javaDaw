@@ -49,10 +49,10 @@ public class CajaCarton {
     @Override
     public String toString() {
         return "CajaCarton{" +
-                "ancho=" + ancho +
-                ", alto=" + alto +
-                ", largo=" + largo +
-                ", peso=" + peso +
+                "ancho=" + ancho + " mm" + "\n" +
+                " alto=" + alto + " mm" + "\n" +
+                " largo=" + largo + " mm" + "\n" +
+                " peso=" + peso + " gr" +
                 '}';
     }
 
