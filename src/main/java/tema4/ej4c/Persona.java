@@ -1,17 +1,24 @@
 package tema4.ej4c;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 public class Persona {
+    public Persona(String nombre, int edad, char sexo, double peso, int altura) {
+    }
 
     //Creamos el metodo boolean filtrarSexo(char sexo), si el
     // dato que se pasa como parámetro no es “H” ni “M” ni "O" el valor
     // de retorno es falso. En caso de que devuelva falso, el sexo será ‘O’.
 
-    public char filtrarSexo(char sexo){
-        if(sexo == 'H' || sexo == 'M'){
-            return sexo;
+    public boolean filtrarSexo(char sexo){
+        boolean resultado = true;
+
+        if(sexo == 'H' || sexo == 'M') {
+            resultado = true;
         }else{
-            return 'O';
+            resultado = false;
         }
+        return resultado;
     }
 
     //Creamos el metodo String generaNIF(). Devuelve un String con un NIF
@@ -26,9 +33,14 @@ public class Persona {
 
     public String generaNIF(){
         String nif = "";
-        int numero = (int) (Math.random() * 100000000);
-        int resto = numero % 23;
         String letra = "";
+        int numero;
+        int resto;
+
+        nif = RandomStringUtils.randomNumeric(8);
+        numero = Integer.parseInt(nif);
+        resto = numero %23;
+
         switch(resto){
             case 0:
                 letra = "T";
@@ -104,6 +116,29 @@ public class Persona {
         return nif;
     }
 
+    //boolean esMayorEdad(), indica si la edad de la persona es mayor o igual a 18 años
+
+    public boolean mayorEdad(){
+        boolean resultado = true;
+
+        if(this.edad >= 18){
+            resultado = true;
+        }else{
+            resultado = false;
+        }
+        return resultado;
+    }
+
+    //float calcularIMC(). Este método devuelve el índice de masa corporal de la persona
+
+
+
+    public void darLike(Serie s){
+
+        s.setLikes(s.getLikes()+1);
+    }
+    //
+
 
     //Clase Persona con los siguiente atributos encapsulados:
     //Nombre, edad, NIF, sexo (‘H’  - hombre - ’M’ - mujer - ’O’ - otros -), peso y altura
@@ -114,26 +149,32 @@ public class Persona {
     private String NIF;
     private char sexo;
     private double peso;
-    private double altura;
+    private int altura;
 
     //Constructor por defecto
 
     public Persona(){
-        this.nombre = "";
-        this.edad = 0;
-        this.NIF = "";
+        this.nombre = "Alberto";
+        this.edad = 21;
+        this.NIF = "77016132B";
         this.sexo = 'H';
-        this.peso = 0;
-        this.altura = 0;
+        this.peso = 90.0;
+        this.altura = 180;
     }
 
     //Constructor con parámetros
 
-    public Persona(String nombre, int edad, String NIF, char sexo, double peso, double altura){
+    public Persona(String nombre, int edad, String NIF, char sexo, double peso, int altura){
         this.nombre = nombre;
         this.edad = edad;
         this.NIF = generaNIF();
-        this.sexo = filtrarSexo(sexo);
+        if (filtrarSexo(sexo)) {
+
+            this.sexo = sexo;
+
+        }else {
+            this.sexo = 'O';
+        }
         this.peso = peso;
         this.altura = altura;
     }
@@ -171,10 +212,6 @@ public class Persona {
         return this.NIF;
     }
 
-    public void setNIF(String NIF){
-        this.NIF = NIF;
-    }
-
     public char getSexo(){
         return this.sexo;
     }
@@ -195,7 +232,7 @@ public class Persona {
         return this.altura;
     }
 
-    public void setAltura(double altura){
+    public void setAltura(int altura){
         this.altura = altura;
     }
 
@@ -212,5 +249,11 @@ public class Persona {
                 ", peso=" + peso +
                 ", altura=" + altura +
                 '}';
+    }
+
+    public float calcularIMC() {
+        float imc = 0;
+        imc=(float)(this.peso/Math.pow((double)this.altura/100, 2));
+        return imc;
     }
 }
