@@ -35,7 +35,13 @@ public class ServicioPersona {
         System.out.println("Introduce la altura: ");
         altura = filtrarNumeroEnteroScaner();
 
-        persona = new Persona(nombre, edad, sexo, peso, altura);
+        persona = new Persona();
+
+        persona.setNombre(nombre);
+        persona.setEdad(edad);
+        persona.setSexo(sexo);
+        persona.setPeso(peso);
+        persona.setAltura(altura);
 
         return persona;
     }
@@ -48,8 +54,6 @@ public class ServicioPersona {
         int numero = 0;
         boolean seguir = true;
         do {
-
-            System.out.println("Introduce el número");
 
             try {
                 numero = entrada.nextInt();
@@ -64,7 +68,10 @@ public class ServicioPersona {
         return numero;
     }
     public static String pedirString(String mensaje) {
-        String string = JOptionPane.showInputDialog(mensaje);
+        Scanner sc = new Scanner(System.in);
+        String string = "";
+        System.out.println(mensaje);
+        string = sc.nextLine();
         return string;
     }
 
@@ -75,8 +82,6 @@ public class ServicioPersona {
         double numero = 0;
         boolean seguir = true;
         do {
-
-            System.out.println("Introduce el número");
 
             try {
                 numero = entrada.nextDouble();
