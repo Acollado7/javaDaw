@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Prueba {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         Persona p1=new Persona();
         Persona p2=ServicioPersona.solicitarDatosP();
@@ -43,7 +44,6 @@ public class Prueba {
 
         p2.darLike(s2);
 
-
     }
     private static void ClasificacionImc(float imc){
 
@@ -57,9 +57,7 @@ public class Prueba {
             System.out.println("La persona esta por encima de su peso ideal");
         }
 
-
     }
-
 
     }
 
