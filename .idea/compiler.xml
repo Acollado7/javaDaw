@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="tema2albertocollado" />
         <module name="p1albertocollado" />
+        <module name="javaDaw" />
       </profile>
     </annotationProcessing>
   </component>
