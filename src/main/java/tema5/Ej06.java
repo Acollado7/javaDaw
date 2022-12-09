@@ -17,6 +17,8 @@ public class Ej06 {
         System.out.println("Comparando arrays 1 y 2: " + compararArrays(array1, array2));
         System.out.println("Comparando arrays 3 y 4: " + compararArrays(array3, array4));
         System.out.println("Comparando arrays 5 y 6: " + compararArrays(array5, array6));
+        System.out.println("Comparando arrays 1 y 3: " + compararArrays(array1, array3));
+        System.out.println("Comparando arrays 1 y 4: " + compararArrays(array1, array4));
 
     }
 
