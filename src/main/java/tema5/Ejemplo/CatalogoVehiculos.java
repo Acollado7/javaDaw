@@ -25,6 +25,14 @@ public class CatalogoVehiculos {
         return numeroVehiculos;
     }
 
+    public String toString() {
+        String resultado = "";
+        for (Vehiculo vehiculo : listaVehiculos) {
+            resultado += vehiculo.toString() + "\n";
+        }
+        return resultado;
+    }
+
     public void borrarVehiculo(Vehiculo vehiculo){
         int posicion = buscarVehiculo(vehiculo);
         if(posicion >= 0){
@@ -41,8 +49,21 @@ public class CatalogoVehiculos {
         return -1;
     }
 
-
     public Vehiculo[] getListaVehiculos() {
         return listaVehiculos;
     }
+
+    //metodo copiarVehiculo, que copie el array original en otro array
+    //debe devolver el array copiado
+
+    public Vehiculo[] copiarVehiculo(){
+        Vehiculo[] copia = new Vehiculo[this.listaVehiculos.length];
+        for (int i = 0; i < this.listaVehiculos.length; i++) {
+            copia[i] = this.listaVehiculos[i];
+        }
+        return copia;
+    }
+
+
+
 }

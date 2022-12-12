@@ -3,20 +3,15 @@ package tema5.Ejemplo;
 public class Prueba {
     public static void main(String[] args) {
 
-        CatalogoVehiculos catalogo = new CatalogoVehiculos(10);
-        catalogo.mostrarCatalogo();
-        Vehiculo[] array = catalogo.getListaVehiculos();
-        array[0].setBastidor("123456");
-        catalogo.mostrarCatalogo();
+       CatalogoVehiculos catalogo = new CatalogoVehiculos(10);
+        System.out.println("El Nº de vehiculos es: " + catalogo.getNumeroVehiculos());
+        System.out.println("El catalogo es: " + catalogo);
 
-        Vehiculo v1 = new Vehiculo();
-        v1.setBastidor("123456");
-        System.out.println(v1);
+        //Usamos el metodo copiarVehiculo
 
-        int posicion = catalogo.buscarVehiculo(v1);
-        System.out.println("Posicion: " + posicion);
+        Vehiculo[] copia = catalogo.copiarVehiculo();
+        System.out.println("El catalogo copiado es: " + copia);
 
-        catalogo.borrarVehiculo(v1);
-        catalogo.mostrarCatalogo();
+
     }
 }
