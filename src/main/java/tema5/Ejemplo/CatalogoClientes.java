@@ -54,6 +54,20 @@ public class CatalogoClientes {
         return clientes;
     }
 
+    public String aniadirCliente(Cliente cliente){
+        String resultado = "";
+        for (int i = 0; i < clientes.length; i++) {
+            if(clientes[i] == null){
+                clientes[i] = cliente;
+                resultado = "Cliente añadido";
+                break;
+            }else{
+                resultado = "No se ha podido añadir el cliente";
+            }
+        }
+        return resultado;
+    }
+
 
 
 

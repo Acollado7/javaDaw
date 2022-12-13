@@ -56,13 +56,19 @@ public class CatalogoVehiculos {
     //metodo copiarVehiculo, que copie el array original en otro array
     //debe devolver el array copiado
 
-    public Vehiculo[] copiarVehiculo(){
-        Vehiculo[] copia = new Vehiculo[this.listaVehiculos.length];
+    private  Vehiculo[]  copiar (){
+
+        Vehiculo[] aux = new Vehiculo[this.numeroVehiculos+1];
+
         for (int i = 0; i < this.listaVehiculos.length; i++) {
-            copia[i] = this.listaVehiculos[i];
+            aux[i]=this.listaVehiculos[i];
         }
-        return copia;
+
+        return aux;
     }
+
+
+
 
 
 

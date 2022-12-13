@@ -14,6 +14,10 @@ public class Cliente {
         this.apellido = apellido;
         this.nif = RandomStringUtils.randomNumeric(8) + "   "+ RandomStringUtils.randomAlphabetic(1).toUpperCase();
     }
+    public Cliente(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
 
     public String getNombre() {
         return nombre;
