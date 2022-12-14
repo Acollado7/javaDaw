@@ -69,10 +69,14 @@ public class CatalogoClientes {
     }
 
 
-
-
-
-
+    public void insertarCliente(Cliente cliente1) {
+        for (int i = 0; i < clientes.length; i++) {
+            if (clientes[i] == null) {
+                clientes[i] = cliente1;
+                break;
+            }
+        }
+    }
 
 
 }

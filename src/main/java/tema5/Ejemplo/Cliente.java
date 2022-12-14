@@ -9,14 +9,20 @@ public class Cliente {
     private String apellido;
     private String nif;
 
-    public Cliente() {
+    private static int contador = 0;
+
+    public Cliente(String nombre, String apellido, String nif) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.nif = RandomStringUtils.randomNumeric(8) + "   "+ RandomStringUtils.randomAlphabetic(1).toUpperCase();
+        contador++;
+        this.nif = String.valueOf(contador);
     }
-    public Cliente(String nombre, String apellido) {
-        this.nombre = nombre;
-        this.apellido = apellido;
+    public Cliente() {
+        this.nombre = RandomStringUtils.randomAlphabetic(10);
+        this.apellido = RandomStringUtils.randomAlphabetic(10);
+        contador++;
+        this.nif = String.valueOf(contador);
+
     }
 
     public String getNombre() {
@@ -43,17 +49,12 @@ public class Cliente {
         this.nif = nif;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Cliente cliente = (Cliente) o;
-        return Objects.equals(nombre, cliente.nombre) && Objects.equals(apellido, cliente.apellido) && Objects.equals(nif, cliente.nif);
+    public static int getContador() {
+        return contador;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(nombre, apellido, nif);
+    public static void setContador(int contador) {
+        Cliente.contador = contador;
     }
 
     @Override
@@ -63,5 +64,18 @@ public class Cliente {
                 ", apellido='" + apellido + '\'' +
                 ", nif='" + nif + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cliente cliente = (Cliente) o;
+        return Objects.equals(nif, cliente.nif);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nif);
     }
 }

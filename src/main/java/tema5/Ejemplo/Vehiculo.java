@@ -11,6 +11,7 @@ public class Vehiculo {
     private Color color;
     private boolean disponible;
     private double tarifa;
+    private static int contador = 0;
 
     public Vehiculo() {
         this.bastidor = RandomStringUtils.randomAlphanumeric(10);
