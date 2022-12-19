@@ -2,69 +2,103 @@ package tema5.Ejemplo;
 
 public class CatalogoVehiculos {
 
-    private int numeroVehiculos;
-    private Vehiculo[] listaVehiculos;
+    private int longitud;
+    private Vehiculo[] vehiculos;
 
-    //El constructor recibe el tamaño del catalogo e
-    //inicializa la estructura de datos con vehiculos aleatorios
-    public CatalogoVehiculos(int tamanio){
-        tamanio = Math.abs(tamanio);
-        this.numeroVehiculos = tamanio;
-        this.listaVehiculos = new Vehiculo[tamanio];
-        for (int i = 0; i < tamanio; i++) {
-            this.listaVehiculos[i] = new Vehiculo();
+    public void VehiculoCatalogo(int longitud) {
+        Math.abs(longitud);
+        this.longitud = longitud;
+        this.vehiculos = new Vehiculo[longitud];
+
+        for (int i = 0; i < vehiculos.length; i++) {
+
+            this.vehiculos[i] = new Vehiculo();
+
         }
 
     }
-    public void mostrarCatalogo(){
-        for (Vehiculo vehiculo : listaVehiculos) {
-            System.out.println(vehiculo);
-        }
-    }
-    public int getNumeroVehiculos() {
-        return numeroVehiculos;
-    }
 
+    @Override
     public String toString() {
-        String resultado = "";
-        for (Vehiculo vehiculo : listaVehiculos) {
-            resultado += vehiculo.toString() + "\n";
+
+        String cadena = "";
+
+        for (Vehiculo v : vehiculos) {
+            if (v != null) {
+                cadena += v.toString() + "\n";
+            }
+
         }
-        return resultado;
+
+        return cadena;
     }
 
-    public void borrarVehiculo(Vehiculo vehiculo){
-        int posicion = buscarVehiculo(vehiculo);
-        if(posicion >= 0){
-            this.listaVehiculos[posicion] = null;
-        }
+    public int getLongitud() {
+        return longitud;
     }
 
-    public int buscarVehiculo(Vehiculo vehiculo){
-        for (int i = 0; i<this.listaVehiculos.length; i++) {
-            if(vehiculo.equals(this.listaVehiculos[i])){
+    private int buscarVehiculo(Vehiculo v) {
+
+        for (int i = 0; i < vehiculos.length; i++) {
+            if (v.equals(this.vehiculos[i])) {
                 return i;
             }
         }
         return -1;
+
     }
 
-    public Vehiculo[] getListaVehiculos() {
-        return listaVehiculos;
+    public Vehiculo buscarVehiculo(String bastidor) {
+
+        Vehiculo aux = new Vehiculo();
+        aux.setBastidor(bastidor);
+
+        int posicion = buscarVehiculo(aux);
+
+        return (posicion >= 0) ? this.vehiculos[posicion] : null;
+
     }
 
-    //metodo copiarVehiculo, que copie el array original en otro array
-    //debe devolver el array copiado
+    public void añadirVehiculo(Vehiculo v) {
 
-    private  Vehiculo[]  copiar (){
+        if (this.longitud < this.vehiculos.length) {
+            for (int i = 0; i < this.vehiculos.length; i++) {
+                if (this.vehiculos[i] == null) {
+                    this.vehiculos[i] = v;
+                    this.longitud++;
+                    break;
 
-        Vehiculo[] aux = new Vehiculo[this.numeroVehiculos+1];
+                }
+            }
 
-        for (int i = 0; i < this.listaVehiculos.length; i++) {
-            aux[i]=this.listaVehiculos[i];
+        } else {
+            this.longitud++;
+            this.vehiculos = copiar();
+            this.vehiculos[this.longitud - 1] = v;
+        }
+
+    }
+
+    private Vehiculo[] copiar() {
+
+        Vehiculo[] aux = new Vehiculo[this.longitud + 1];
+
+        for (int i = 0; i < this.vehiculos.length; i++) {
+            aux[i] = this.vehiculos[i];
         }
 
         return aux;
+    }
+
+    //borrar clientes
+    public boolean borrarVehiculo(Vehiculo v) {
+        int pos = buscarVehiculo(v);
+        if (pos >= 0) {
+            this.longitud--;
+            this.vehiculos[pos] = null;
+            return true;
+        }
+        return false;
     }
 
 
