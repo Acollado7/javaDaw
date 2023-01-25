@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Diagonales {
+public class DiagonalesVecinas {
     public static void main(String[] args) {
         int[][] matriz = {
                 {4,5,9,5},
